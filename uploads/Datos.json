@@ -1,0 +1,87 @@
+{
+    "Atacante": {
+        "Habilidad": 160,
+        "daño": 100,
+        "ReduccionArmadura": 5,
+        "adicional": 1,
+        "Situacion": [
+            "Flanco",
+            "Espalda",
+            "Sorpresa",
+            "Ceguera Parcial",
+            "Ceguera Absoluta",
+            "Posicion Superior",
+            "Derribado",
+            "Paralisis menor",
+            "Paralisis parcial",
+            "Paralisis Completa",
+            "Amenazado",
+            "Levitando",
+            "Vuelo Tipo 10-14",
+            "Vuelo Tipo 15",
+            "Cargando",
+            "Desenfundar",
+            "Espacio reducido",
+            "Adversario pequeño",
+            "Adversario diminuto"
+        ],
+        "Maniobra": [
+            "Ataque en area",
+            "Engatillar",
+            "Presa",
+            "Desarmar",
+            "Ataque con critico secundario",
+            "Defensa total",
+            "Apartar"
+        ],
+        "Apuntado": [
+            "Cuello",
+            "Cabeza",
+            "Codo",
+            "Corazón",
+            "Ingle",
+            "Pie",
+            "Mano",
+            "Rodilla",
+            "Abdomen",
+            "Brazo",
+            "Muslo",
+            "Pantorrilla",
+            "Torso",
+            "Ojo",
+            "Muñeca",
+            "Hombro"
+        ]
+    },
+    "Defensor": {
+        "Habilidad": 160,
+        "TipoArmadura": 5,
+        "TipoDefensa": "Parada | Esquiva",
+        "adicional": 1,
+        "Situacion": [
+            "Flanco",
+            "Espalda",
+            "Sorpresa",
+            "Ceguera Parcial",
+            "Ceguera Absoluta",
+            "Derribado",
+            "Paralisis menor",
+            "Paralisis parcial",
+            "Paralisis Completa",
+            "Amenazado",
+            "Levitando",
+            "Vuelo Tipo 10-14",
+            "Vuelo Tipo 15",
+            "Cargando",
+            "Desenfundar",
+            "Espacio reducido",
+            "Adversario diminuto"
+        ],
+        "Maniobra": [
+            "Defensa total",
+            "Apartar",
+            "Ataque con critico secundario"
+
+        ]
+    }
+}
