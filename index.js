@@ -14,9 +14,9 @@ const info = require('./routes/info.js');
 
 //connectDB()
 
-app.use('/combat', fight);
+app.use('/Anima/combat', fight);
 
-app.use('/info', info);
+app.use('/Anima/info', info);
 
 app.listen(PORT, () => {
     console.log('Iniciado, Port is: ' + PORT);

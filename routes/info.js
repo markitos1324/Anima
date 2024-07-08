@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-const situations = require("../uploads/CombatSituations.json")
-const targets = require("../uploads/Targeted attacks.json")
+const situations = require("../uploads/CombatSituations")
+const aiming = require("../uploads/Aiming")
 
 router
 .get('/situations', (req, res) => {
@@ -11,17 +11,25 @@ router
 
     //if (resp => 400) console.error("FAIL: RESP")
 
-    res.status(200 ).send({result: situations })
+    res.status(200 ).send({result: situations.allSituations })
 })
-
 router
-.get('/target', (req, res) => {
+.get('/maneuver', (req, res) => {
 
     //const resp = fightController.setAttack(req)
 
     //if (resp => 400) console.error("FAIL: RESP")
 
-    res.status(200 ).send({result: targets })
+    res.status(200 ).send({result: situations.allManeuver })
+})
+router
+.get('/aiming', (req, res) => {
+
+    //const resp = fightController.setAttack(req)
+
+    //if (resp => 400) console.error("FAIL: RESP")
+
+    res.status(200 ).send({result: aiming.aiming })
 })
 
 

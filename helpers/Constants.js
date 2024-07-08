@@ -1,0 +1,1 @@
+exports.MODES = ['Attack', 'Dodge', 'Parry']
