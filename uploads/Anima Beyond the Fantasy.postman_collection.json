@@ -1,0 +1,157 @@
+{
+	"info": {
+		"_postman_id": "ae18b0f4-7666-4e46-bae8-1be082142c57",
+		"name": "Anima Beyond the Fantasy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7548976"
+	},
+	"item": [
+		{
+			"name": "infoRoute",
+			"item": [
+				{
+					"name": "Situations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlL}}Anima/info/situations",
+							"host": [
+								"{{urlL}}Anima"
+							],
+							"path": [
+								"info",
+								"situations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Maneuver",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlL}}Anima/info/maneuver",
+							"host": [
+								"{{urlL}}Anima"
+							],
+							"path": [
+								"info",
+								"maneuver"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Aiming",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlL}}Anima/info/aiming",
+							"host": [
+								"{{urlL}}Anima"
+							],
+							"path": [
+								"info",
+								"aiming"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Para consultas de las listas de las diferentes situaciones o penalizadores para los atacantes y defensores"
+		},
+		{
+			"name": "Fight",
+			"item": [
+				{
+					"name": "Attack",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"mode\": \"Attack\",\r\n        \"attackValue\": 180,\r\n        \"count\": 2,\r\n        \"aiming\": \"Cabeza\",\r\n        \"situations\": [\r\n          \"Flanco\",\r\n          \"Cargando\"\r\n        ],\r\n        \"maneuver\": [\r\n          \"Ataque adicional\",\r\n          \"Ataque con crítico secundario\"\r\n        ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlL}}Anima/combat/attack",
+							"host": [
+								"{{urlL}}Anima"
+							],
+							"path": [
+								"combat",
+								"attack"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Defense Dodge",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"mode\": \"Dodge\",\r\n        \"defenseValue\": 180,\r\n        \"count\": 2,\r\n        \"situations\": [\r\n          \"Espalda\",\r\n          \"Derribado\"\r\n        ],\r\n        \"maneuver\": [\r\n          \"Apartar\"\r\n        ]\r\n      }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlL}}Anima/combat/defense",
+							"host": [
+								"{{urlL}}Anima"
+							],
+							"path": [
+								"combat",
+								"defense"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Defense Parry",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"mode\": \"Parry\",\r\n        \"defenseValue\": 180,\r\n        \"count\": 2,\r\n        \"situations\": [\r\n          \"Parálisis parcial\",\r\n          \"Levitando\"\r\n        ],\r\n        \"maneuver\": [\r\n          \"Defensa total\"\r\n        ]\r\n      }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlL}}Anima/combat/defense",
+							"host": [
+								"{{urlL}}Anima"
+							],
+							"path": [
+								"combat",
+								"defense"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Calculo de el ataque y defensa del jugador"
+		}
+	]
+}
