@@ -129,8 +129,8 @@ const allSituations = [
   },
   {
     Situación: "Espacio reducido",
-    Ataque: "-40 Esp.",
-    Parada: "-40 Esp.",
+    Ataque: -40,
+    Parada: -40,
     Esquiva: -40,
     Turno: 0,
     "Acción Física": -20,
@@ -185,11 +185,58 @@ const allManeuver = [
   {
       "maniobra": "Apartar",
       "penalizador": -30
+  },
+  {
+      "maniobra": "Resistir el golpe",
+      "penalizador": -80
   }
 ]
 
+const atackManeuver = [
+  {
+    "maniobra": "Ataque adicional",
+    "penalizador": -25
+  },
+  {
+      "maniobra": "Ataque en área",
+      "penalizador": -50
+  },
+  {
+      "maniobra": "Engatillar",
+      "penalizador": -100
+  },
+  {
+      "maniobra": "Presa",
+      "penalizador": -40
+  },
+  {
+      "maniobra": "Desarmar",
+      "penalizador": -30
+  },
+  {
+      "maniobra": "Ataque con crítico secundario",
+      "penalizador": -10
+  }
+]
+
+const defenseManeuver = [
+  {
+    "maniobra": "Defensa total",
+    "penalizador": 20
+  },
+  {
+      "maniobra": "Apartar",
+      "penalizador": -30
+  },
+  {
+      "maniobra": "Resistir el golpe",
+      "penalizador": -80
+  }
+]
 
 module.exports = {
   allSituations,
-  allManeuver
+  allManeuver,
+  atackManeuver,
+  defenseManeuver
 }

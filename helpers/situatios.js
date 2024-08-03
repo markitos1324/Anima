@@ -4,36 +4,39 @@ const Constants = require("../helpers/Constants");
 
 const calculateSituationModifier = (mode, situations) => {
   let modifier = 0;
-  situations.forEach((actualSituation) => {
-    const found = Situations.allSituations.find(
-      (element) => element.Situación == actualSituation
-    );
-
-    mode == Constants.MODES[0]
-      ? (modifier += found.Ataque)
-      : mode == Constants.MODES[1]
-      ? (modifier += found.Esquiva)
-      : (modifier += found.Parada);
-  });
+  if (situations) {
+    situations.forEach((actualSituation) => {
+      const found = Situations.allSituations.find(
+        (element) => element.Situación == actualSituation
+      );
+  
+      mode == (Constants.MODES[0]
+        ? (modifier += found.Ataque)
+        : mode == Constants.MODES[1]
+        ? (modifier += found.Esquiva)
+        : (modifier += found.Parada));
+    });
+  }
   return modifier;
 };
 
 const calculateManeuverModifier = (situations) => {
   let modifier = 0;
-  situations.forEach((actualSituation) => {
-    const found = Situations.allManeuver.find(
-      (element) => element.maniobra == actualSituation
-    );
-
-    modifier += found.penalizador;
-  });
-  return modifier;
+  if (situations) {
+    situations.forEach((actualSituation) => {
+      const found = Situations.allManeuver.find(
+        (element) => element.maniobra == actualSituation
+      );
+      modifier += found.penalizador;
+    })
+  }
+  return modifier
 };
 
 const calculateAimingModifier = (area) => {
   const found = Aiming.aiming.find((element) => element.area == area);
-
-  return found.penalizador;
+  return (found) ? found.penalizador: 0
+  
 };
 
 const calculateAditionalModifier = (count) => {

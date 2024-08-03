@@ -1,26 +1,26 @@
 const express = require('express');
 const router = express.Router();
 
-const situations = require("../uploads/CombatSituations")
 const aiming = require("../uploads/Aiming")
+const infoController = require("../controllers/infoControllers")
 
 router
 .get('/situations', (req, res) => {
 
-    //const resp = fightController.setAttack(req)
+    const resp = infoController.getSituationsByMode()
 
-    //if (resp => 400) console.error("FAIL: RESP")
+    if (resp.code >= 400) console.error("FAIL: RESP")
 
-    res.status(200 ).send({result: situations.allSituations })
+    res.status(200 ).send({result: resp.data })
 })
 router
 .get('/maneuver', (req, res) => {
 
-    //const resp = fightController.setAttack(req)
+    const resp = infoController.getMoneuverByMode()
 
-    //if (resp => 400) console.error("FAIL: RESP")
+    if (resp.code >= 400) console.error("FAIL: RESP")
 
-    res.status(200 ).send({result: situations.allManeuver })
+    res.status(200 ).send({result: resp.data })
 })
 router
 .get('/aiming', (req, res) => {

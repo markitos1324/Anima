@@ -2,7 +2,6 @@ require('dotenv').config()
 const express = require('express');
 const cors = require('cors');
 const app = express();
-const connectDB = require("./config/db.js");
 
 const PORT = process.env.PORT || 5000;
 
@@ -11,8 +10,6 @@ app.use(cors());
 
 const fight = require('./routes/fight.js');
 const info = require('./routes/info.js');
-
-//connectDB()
 
 app.use('/Anima/combat', fight);
 
