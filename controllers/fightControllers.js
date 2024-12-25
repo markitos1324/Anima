@@ -10,7 +10,7 @@ const attackCalculate = (req) => {
   const aditional = situations.calculateAditionalModifier(req.body.count);
 
   const result = {
-    calculate: modifier + aiming + aditional + maneuver + req.body.attackValue
+    calculate: (modifier + aiming + aditional + maneuver + req.body.attackValue) <= 0 ? 0 : modifier + aiming + aditional + maneuver + req.body.attackValue
   }
 
   return {code: 200, data: result}
@@ -24,7 +24,7 @@ const defenseCalculate = (req) => {
   const maneuver = situations.calculateManeuverModifier(req.body.maneuver);
   const aditional = situations.calculateAditionalModifier(req.body.count);
   const result = {
-    calculate: modifier + aditional + maneuver + req.body.defenseValue
+    calculate: (modifier + aditional + maneuver + req.body.defenseValue) <= 0 ? 0 : modifier + aditional + maneuver + req.body.defenseValue
   }
   return {code: 200, data: result}
 };
