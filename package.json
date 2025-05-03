@@ -22,7 +22,7 @@
     "nodemon": "^3.1.4"
   },
   "engines": {
-    "node": "16.x"
+    "node": "20.x"
   },
   "repository": {
     "url": "https://glitch.com/edit/#!/glitch-hello-node"
